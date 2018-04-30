@@ -1,14 +1,3 @@
-/**
- * NWEN 241 Programming Assignment 3
- * kgame.c C Source File
- *
- * Name:
- * Student ID:
- * 
- * IMPORTANT: Implement the functions specified in kgame.h here. 
- * You are free to implement additional functions that are not specified in kgame.h here.
- */
-
 #include <stdlib.h>
 #include "kgame.h"
 
