@@ -17,7 +17,9 @@ void kgame_add_random_tile(kgame_t *game)
 	int row, col;
 	
 	if(!game) return;
-
+	if(game->board[row][col] == ' '){
+		return;   
+	}
 	// find random, but empty tile
 	// FIXME: will go to infinite loop if no empty tile
 	do {
