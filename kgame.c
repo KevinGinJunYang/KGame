@@ -60,13 +60,44 @@ bool kgame_update(kgame_t *game, dir_t direction)
 void kgame_save(const kgame_t *game)
 {
     // FIXME: Implement correctly (task 5)
+    char ch;
+    FILE *fp;
+    fp = fopen("KGame.txt", "w");
+    
+    for(int i = 0; i < boardSize; i++){
+     for(int j = 0; j < boardSize; j++){
+      ch = game->board[i][j];
+      putc(ch,fp);
+     }
+    }
+    fprintf(fp, "%d", game->score);
+    fclose(fp);
+    printf("Saved");
 }
 
 
 bool kgame_load(kgame_t *game)
 {
     // FIXME: Implement correctly (task 6)
-    return false;
+    FILE *fl;
+    int score;
+    
+    fl = fopen("KGame.txt", "r");
+    if(fl == NULL){
+     printf("That is invalid");
+     return false;
+    }
+    
+    for(int i = 0; i < boardSize; i++){
+     for(int j = 0; j < boardSize; j++){
+         game->board[i][j] = fgetc(fl);
+         
+     }
+    }
+    fscanf(fl, "%d",&score);
+    game->score = score;
+    fclose(fl);
+    
 }
 
 
