@@ -38,15 +38,40 @@ void kgame_render(char *output_buffer, const kgame_t *game)
 
 bool kgame_is_won(const kgame_t *game)
 {
-    // FIXME: Implement correctly (task 2)
-    return false;
+	for(int i = 0; i < boardSize; i++){
+		for(int j = 0; j < boardSize; j++){
+			if(game->board[i][j] == 'K'){
+				return true;   
+			}
+		}
+	}
+	return false;
 }
 
 
 bool kgame_is_move_possible(const kgame_t *game)
 {
-    // FIXME: Implement correctly (task 3)
-    return true;
+	for(int i = 0; i < boardSize; i++){
+		for(int j = 0; j < boardSize; j++){
+
+			if(j<3){
+				if(game->board[i][j] == game->board[i][j+1] && game->board[i][j] != ' '){
+					return true;   
+				}
+			}
+			if(i<3){
+				if(game->board[i][j] == game->board[i+1][j] && game->board[i][j] != ' '){
+					return true;   
+				}
+
+			}
+			if(game->board[i][j] == ' '){
+				return true;
+			}
+
+		}
+	}
+	return false; 
 }
 
 
