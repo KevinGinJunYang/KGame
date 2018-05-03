@@ -33,8 +33,36 @@ void kgame_add_random_tile(kgame_t *game)
 
 
 void kgame_render(char *output_buffer, const kgame_t *game)
-{
-    // FIXME: Implement correctly (task 1)
+{	  
+	for(int z = 0; z < boardSize; z++){
+		sprintf(output_buffer++, "+");
+		sprintf(output_buffer++, "-");
+	}
+	sprintf(output_buffer++, "+");
+	sprintf(output_buffer++, "\n");
+
+	//get string of game board
+	for(int row = 0; row < boardSize; row++){
+
+		//get character and store it
+		sprintf(output_buffer++, "|");
+		for(int col = 0; col < boardSize; col++){
+			sprintf(output_buffer++, "%c", game -> board[row][col]);
+			sprintf(output_buffer++, "|");
+
+		}
+		sprintf(output_buffer++, "\n");
+		for(int z = 0; z < boardSize; z++){
+			sprintf(output_buffer++, "+");
+			sprintf(output_buffer++, "-");
+		}
+		sprintf(output_buffer++, "+");
+		sprintf(output_buffer++, "\n");
+        
+        sprintf(output_buffer, "\nScore = %d", game->score);
+	}
+
+
 }
 
 
