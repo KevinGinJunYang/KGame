@@ -1,5 +1,7 @@
 #include <stdlib.h>
 #include "kgame.h"
+#include <stdio.h>
+#define boardSize 4
 
 
 void kgame_init(kgame_t *game)
