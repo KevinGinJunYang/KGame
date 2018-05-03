@@ -1,10 +1,4 @@
-/**
- * NWEN 241 Programming Assignment 3
- * main.c C Source File
- *
- * This program is provide as-is without any warranty. You may use this file to
- * test your function implementations.
- * 
+
  * This program will accept the following keystrokes as valid:
  * - UP/DOWN/LEFT/RIGHT arrow keys for making a move
  * - S or s to save game
