@@ -122,6 +122,7 @@ int main(void)
 
     /* Game loop */
     while (1) {
+       kgame_add_random_tile(&kgame);
         /* Render */
         if(render == true) {
             kgame_render(kgame_buffer, &kgame);
