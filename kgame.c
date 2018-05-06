@@ -122,7 +122,7 @@ bool kgame_update(kgame_t *game, dir_t direction)
 
 void kgame_save(const kgame_t *game)
 {
-    // FIXME: Implement correctly (task 5)
+    // FIXME: Implement correctly (task 5) // NEED TO FIX DOESNT SAVE ALL 
     char ch;
     FILE *fp;
     fp = fopen("KGame.txt", "w");
