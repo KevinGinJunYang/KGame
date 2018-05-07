@@ -113,49 +113,49 @@ bool kgame_is_move_possible(const kgame_t *game)
 }
 
 void move(kgame_t *game){
-    
-    bool validMove = kgame_is_move_possible(game);
 
-	if(validMove){  // shift 
-			for(int i = 0; i <boardSize; i++ ){
-				for(int j= 0; j < boardSize-1; j++){
-                    for(int b = 0; b < boardSize -1; b++){
+	bool validMove = kgame_is_move_possible(game);
+
+	if(validMove){
+		for(int i = 0; i <boardSize; i++ ){
+			for(int j= 0; j < boardSize-1; j++){
+				for(int b = 0; b < boardSize -1; b++){
 					if(game->board[i][b + 1] == ' '){
-                        char temp[boardSize][boardSize];
-                        temp[i][b] = game->board[i][b +1];
-                     game->board[i][b+1] = game->board[i][b];   
-                      game->board[i][b] = temp[i][b];
-                    }
+						char temp[boardSize][boardSize];
+						temp[i][b] = game->board[i][b +1];
+						game->board[i][b+1] = game->board[i][b];   
+						game->board[i][b] = temp[i][b];
+					}
+				}
 			}
-            }
-            }
-			// increment 
-			for(int i = 0; i < boardSize; i++){
-                for(int j = boardSize-1; j > 0; j--){
-                    if(game->board[i][j-1] == game->board[i][j] && game->board[i][j - 1]!= ' ' && game->board[i][j]!= ' '){
-			char temp[boardSize][boardSize];
-                     	game->board[i][j]++;
-                        game->score += get_score(game->board[i][j]);
-                     game->board[i][j-1] = ' ';
-                     
-                    }
-                    
-                }
-            }
-            // shift 
-        for(int i = 0; i <boardSize; i++ ){
-				for(int j= 0; j < boardSize-1; j++){
-                    for(int b = 0; b < boardSize -1; b++){
+		}
+
+		for(int i = 0; i < boardSize; i++){
+			for(int j = boardSize-1; j > 0; j--){
+				if(game->board[i][j-1] == game->board[i][j] && game->board[i][j - 1]!= ' ' && game->board[i][j]!= ' '){
+					char temp[boardSize][boardSize];
+					game->board[i][j]++;
+					game->score += get_score(game->board[i][j]);
+					game->board[i][j-1] = ' ';
+
+				}
+
+			}
+		}
+
+		for(int i = 0; i <boardSize; i++ ){
+			for(int j= 0; j < boardSize-1; j++){
+				for(int b = 0; b < boardSize -1; b++){
 					if(game->board[i][b + 1] == ' '){
-                        char temp[boardSize][boardSize];
-                        temp[i][b] = game->board[i][b +1];
-                     game->board[i][b+1] = game->board[i][b];   
-                      game->board[i][b] = temp[i][b];
-                    }
+						char temp[boardSize][boardSize];
+						temp[i][b] = game->board[i][b +1];
+						game->board[i][b+1] = game->board[i][b];   
+						game->board[i][b] = temp[i][b];
+					}
+				}
 			}
-            }
-            }
-        }
+		}
+	}
 }
 
 
