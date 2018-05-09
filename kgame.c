@@ -86,6 +86,9 @@ bool kgame_is_won(const kgame_t *game)
 	return false;
 }
 
+void rotate(const kgame_t *game){
+//TODO	
+}
 
 bool kgame_is_move_possible(const kgame_t *game)
 {
