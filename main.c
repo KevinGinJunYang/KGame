@@ -153,6 +153,7 @@ int main(void)
             case LOAD:
                 render = kgame_load(&kgame);
                 update_status("Tried to load game.");
+                run = true;
                 break;
             case UP:
             case DOWN:
