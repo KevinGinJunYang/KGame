@@ -86,8 +86,20 @@ bool kgame_is_won(const kgame_t *game)
 	return false;
 }
 
-void rotate(const kgame_t *game){
-//TODO	
+void rotate(kgame_t *game){ // rotates the board so that you can just turn and move instead of going through each iteration  
+	char temp[boardSize][boardSize]; 
+	for(int i = 0; i < boardSize; i++){
+		for(int j = 0; j < boardSize; j++){
+			temp[i][j] = game->board[i][j]; // creates and temp board and set to current board 
+		}
+	}
+
+	for(int z = 0; z < boardSize; z++){
+		for(int x = 0; x < boardSize; x++){
+			game->board[z][x] = temp[boardSize - 1 - x][z];    // rotates board clockwise 
+		}
+	}   
+
 }
 
 bool kgame_is_move_possible(const kgame_t *game)
