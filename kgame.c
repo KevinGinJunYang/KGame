@@ -150,7 +150,7 @@ void move(kgame_t *game){
 				if(game->board[i][j-1] == game->board[i][j] && game->board[i][j - 1]!= ' ' && game->board[i][j]!= ' '){
 					char temp[boardSize][boardSize];
 					game->board[i][j]++;
-					game->score += get_score(game->board[i][j]);
+					game->score += get_score(game->board[i][j]); 
 					game->board[i][j-1] = ' ';
 
 				}
@@ -179,6 +179,10 @@ bool kgame_update(kgame_t *game, dir_t direction)
 {
     // FIXME: Implement correctly (task 4)
     return true;    
+}
+
+int get_score(char value){
+//FIXME	
 }
 
 
