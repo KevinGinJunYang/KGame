@@ -181,10 +181,6 @@ bool kgame_update(kgame_t *game, dir_t direction)
     return true;    
 }
 
-int get_score(char value){
-//FIXME	
-}
-
 
 void kgame_save(const kgame_t *game)
 {
