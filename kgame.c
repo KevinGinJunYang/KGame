@@ -2,6 +2,7 @@
 #include "kgame.h"
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
 #define boardSize 4
 
 int get_score(char value);
@@ -24,7 +25,7 @@ void kgame_init(kgame_t *game)
 void kgame_add_random_tile(kgame_t *game)
 {
 	int row, col;
-
+	srand(time(NULL));
 	if(!game) return;
 	int count = 0; 
 	for(int i = 0; i < boardSize; i++){ // checks through board for non taken spaces
