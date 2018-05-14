@@ -35,9 +35,7 @@ void kgame_add_random_tile(kgame_t *game)
 			}
 		}
 	}
-	if(count == 16) return; // if board is full return so game doesn't infinite loop (4x4)
-	// find random, but empty tile
-	// FIXME: will go to infinite loop if no empty tile
+	if(count == 16) return; 
 	do {
 		row = rand() % 4;
 		col = rand() % 4;
