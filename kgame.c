@@ -78,7 +78,7 @@ void kgame_render(char *output_buffer, const kgame_t *game)
 		sprintf(output_buffer++, "+");
 		sprintf(output_buffer++, "\n");
 
-		sprintf(output_buffer, "\nScore = %d", game->score); // print score 
+		sprintf(output_buffer, "\nScore = %d", game->score);
 
 	}
 
